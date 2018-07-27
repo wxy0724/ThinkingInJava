@@ -16,7 +16,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.31</version>
+            <version>1.2.44</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -27,6 +27,48 @@
             <groupId>dom4j</groupId>
             <artifactId>dom4j</artifactId>
             <version>${dom4j-version}</version>
+        </dependency>
+
+        <!-- lucene核心包
+			以下这三个是用在lucene的全部jar包，core是核心包，queryparser是查询jar包。
+			查询被索引文件如果是全英文的情况下，pom.xml文件写这三个，就欧了!-->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-core</artifactId>
+            <version>5.2.1</version>
+        </dependency>
+
+        <!-- 查询解析器 -->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-queryparser</artifactId>
+            <version>5.2.1</version>
+        </dependency>
+
+        <!-- 分析器 -->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-analyzers-common</artifactId>
+            <version>5.2.1</version>
+        </dependency>
+        <!-- 很明显，这个是查询被检索文件为全中文的情况下，
+            加上以上的三个，再加上这两个就行了。
+            值得提一下，“高亮显示”的jar包可加可不加，
+            在这里面加上，是因为这个在后面会用到。
+            但是还是建议大家把这个加上，懂得多也不是个错。
+             -->
+        <!-- 中文分词查询器smartcn -->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-analyzers-smartcn</artifactId>
+            <version>5.2.1</version>
+        </dependency>
+
+        <!-- 高亮显示 -->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-highlighter</artifactId>
+            <version>5.2.1</version>
         </dependency>
     </dependencies>
 
