@@ -175,6 +175,42 @@ public class MyGraph {
         System.out.println("最小生成树权值和:"+sum);
     }
 
+    public int getVertexSize() {
+        return vertexSize;
+    }
+
+    public void setVertexSize(int vertexSize) {
+        this.vertexSize = vertexSize;
+    }
+
+    public int[] getVertexs() {
+        return vertexs;
+    }
+
+    public void setVertexs(int[] vertexs) {
+        this.vertexs = vertexs;
+    }
+
+    public int[][] getMatrix() {
+        return matrix;
+    }
+
+    public void setMatrix(int[][] matrix) {
+        this.matrix = matrix;
+    }
+
+    public static int getMaxWeight() {
+        return MAX_WEIGHT;
+    }
+
+    public boolean[] getIsVisited() {
+        return isVisited;
+    }
+
+    public void setIsVisited(boolean[] isVisited) {
+        this.isVisited = isVisited;
+    }
+
     /*********************************/
     public static void main(String [] args){
         MyGraph graph = new MyGraph(9);

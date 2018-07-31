@@ -42,7 +42,7 @@ public class DnjavaDijstra {
 
     public static void main(String[] args){
         MyGraph graph = new MyGraph(MAXVEX);
-        graph.createGraph();
+//        graph.createGraph();
         DnjavaDijstra dijstra = new DnjavaDijstra();
         dijstra.shortestPathDijstra(graph);
     }
