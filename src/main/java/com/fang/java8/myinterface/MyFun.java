@@ -1,4 +1,4 @@
-package com.fang.java8;
+package com.fang.java8.myinterface;
 
 public interface MyFun {
 
