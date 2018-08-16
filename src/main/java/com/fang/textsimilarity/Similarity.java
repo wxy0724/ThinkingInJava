@@ -7,6 +7,7 @@ import java.util.Set;
 /**
  * 字符串相似性匹配算法
  * 余弦相识度
+ * @author
  */
 public class Similarity {
 
@@ -38,7 +39,9 @@ public class Similarity {
         }
     }
 
-    // 求余弦相似度
+    /**
+     * 求余弦相似度
+      */
     public double sim() {
         double result = 0;
         result = pointMulti(vectorMap) / sqrtMulti(vectorMap);
@@ -52,33 +55,37 @@ public class Similarity {
         return result;
     }
 
-    // 求平方和
+    /**
+     * 求平方和
+      */
     private double squares(Map<Character, int[]> paramMap) {
         double result1 = 0;
         double result2 = 0;
         Set<Character> keySet = paramMap.keySet();
         for (Character character : keySet) {
-            int temp[] = paramMap.get(character);
+            int[] temp = paramMap.get(character);
             result1 += (temp[0] * temp[0]);
             result2 += (temp[1] * temp[1]);
         }
         return result1 * result2;
     }
 
-    // 点乘法
+    /**
+     * 点乘法
+      */
     private double pointMulti(Map<Character, int[]> paramMap) {
         double result = 0;
         Set<Character> keySet = paramMap.keySet();
         for (Character character : keySet) {
-            int temp[] = paramMap.get(character);
+            int[] temp = paramMap.get(character);
             result += (temp[0] * temp[1]);
         }
         return result;
     }
 
     public static void main(String[] args) {
-        String s1 = "我是一个帅哥";
-        String s2 = "帅哥是我";
+        String s1 = "二七区建云街19号1号楼北6单元77号";
+        String s2 = "二七区保全街7号院2号楼1单元5层13号";
         Similarity similarity = new Similarity(s1, s2);
         System.out.println(similarity.sim());
     }
