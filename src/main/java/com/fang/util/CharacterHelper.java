@@ -1,4 +1,4 @@
-package com.fang.character;
+package com.fang.util;
 
 /**
  * 字符串规划工具
@@ -10,6 +10,12 @@ public class CharacterHelper {
         char c1 = CharacterHelper.regularize(c);
         System.out.println("'");
         System.out.println(c1);
+    }
+
+    public static boolean isHanZi(char ch) {
+        // 判断是否汉字
+        return (ch >= 0x4E00 && ch <= 0x9FA5);
+
     }
 
     /**
