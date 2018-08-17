@@ -11,7 +11,7 @@ import java.util.Set;
  */
 public class Similarity {
 
-    Map<Character, int[]> vectorMap = new HashMap<Character, int[]>();
+    Map<Character, int[]> vectorMap = new HashMap<>();
 
     int[] tempArray = null;
 
@@ -48,6 +48,11 @@ public class Similarity {
         return result;
     }
 
+    /**
+     * 开平方
+     * @param paramMap
+     * @return
+     */
     private double sqrtMulti(Map<Character, int[]> paramMap) {
         double result = 0;
         result = squares(paramMap);
@@ -84,8 +89,8 @@ public class Similarity {
     }
 
     public static void main(String[] args) {
-        String s1 = "二七区建云街19号1号楼北6单元77号";
-        String s2 = "二七区保全街7号院2号楼1单元5层13号";
+        String s1 = "海滨南路-2-12号203";
+        String s2 = "盛世花园-12-702";
         Similarity similarity = new Similarity(s1, s2);
         System.out.println(similarity.sim());
     }
