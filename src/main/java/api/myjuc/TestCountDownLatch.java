@@ -40,7 +40,6 @@ class LatchDemo implements Runnable{
         this.latch = latch;
     }
 
-    @Override
     public void run() {
 
         int time = 5000;
