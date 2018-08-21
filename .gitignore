@@ -1,0 +1,9 @@
+target/
+.settings/
+logs/
+.classpath
+.project
+.checkstyle
+words/
+words.properties
+index/
