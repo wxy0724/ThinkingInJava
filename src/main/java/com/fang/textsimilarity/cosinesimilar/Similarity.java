@@ -43,8 +43,8 @@ public class Similarity {
      * 求余弦相似度
       */
     public double sim() {
-        double result = 0;
-        result = pointMulti(vectorMap) / sqrtMulti(vectorMap);
+//        double result = 0;
+        double result = pointMulti(vectorMap) / sqrtMulti(vectorMap);
         return result;
     }
 
@@ -54,8 +54,8 @@ public class Similarity {
      * @return
      */
     private double sqrtMulti(Map<Character, int[]> paramMap) {
-        double result = 0;
-        result = squares(paramMap);
+//        double result = 0;
+        double result = squares(paramMap);
         result = Math.sqrt(result);
         return result;
     }
@@ -89,8 +89,8 @@ public class Similarity {
     }
 
     public static void main(String[] args) {
-        String s1 = "中国吉林省吉林市丰满区江南壹号花园B3号楼2单元26层102号";
-        String s2 = "江南壹号花园B3号楼2单元26层102号";
+        String s1 = "北京市沈阳路庄维花园7号楼";
+        String s2 = "沈阳市北京路庄维花园7号楼";
         Similarity similarity = new Similarity(s1, s2);
         System.out.println(similarity.sim());
     }

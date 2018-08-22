@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 /**
  * 收集
- * collect--将流转换为其他形式，就收一个Collect接口的实现，用于个Strem中元素做汇总方法
+ * collect--将流转换为其他形式，接受一个Collect接口的实现，用于个Strem中元素做汇总方法
  */
 public class TestAPICollect {
 
