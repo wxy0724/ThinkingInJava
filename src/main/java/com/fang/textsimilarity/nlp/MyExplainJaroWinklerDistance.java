@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 
 /**
- * @author http://jimmee.iteye.com/blog/2077187
+ * @author
  */
 public class MyExplainJaroWinklerDistance {
 

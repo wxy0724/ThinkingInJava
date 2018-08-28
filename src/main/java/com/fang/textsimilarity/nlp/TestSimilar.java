@@ -27,11 +27,26 @@ public class TestSimilar {
         System.out.println(dis);
     }
 
+    /**
+     * Lucene提供的JaroWinklerDistance
+     */
     @Test
     public void testJaroWinklerDistanceFromLucene(){
         JaroWinklerDistance jaro = new JaroWinklerDistance();
-        String query = "北京市沈阳路庄维花园7号楼";
-        String term  = "沈阳市北京路庄维花园7号楼";
+        String query = "北京市吉林街庄维花园7号楼";
+        String term  = "吉林市北京街庄维花园7号楼";
+        float f = jaro.getDistance(query, term);
+        System.out.println(f);
+    }
+
+    /**
+     * 修改t测试JaroWinklerDistance
+     */
+    @Test
+    public void testMyJaroWinklerDistanceFromLucene(){
+        MyExplainJaroWinklerDistance jaro = new MyExplainJaroWinklerDistance();
+        String query = "北京市吉林街庄维花园7号楼";
+        String term  = "吉林市北京街庄维花园7号楼";
         float f = jaro.getDistance(query, term);
         System.out.println(f);
     }
