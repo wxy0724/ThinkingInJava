@@ -1,4 +1,4 @@
-target/
+﻿target/
 .settings/
 logs/
 .classpath
@@ -7,3 +7,5 @@ logs/
 words/
 words.properties
 index/
+.idea
+*.iml
