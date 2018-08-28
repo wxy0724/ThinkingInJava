@@ -18,7 +18,7 @@ public class TestMarshaller {
             Marshaller ms = jaxbC.createMarshaller();
             ms.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
             Girl girl = new Girl();
-            ArrayList<Girl> girls = new ArrayList<>();
+            ArrayList<Girl> girls = new ArrayList<>(3);
             Girl g1 = new Girl("小红", "20");
             Girl g2 = new Girl("小芳", "16");
             Girl g3 = new Girl("小丽", "17");
