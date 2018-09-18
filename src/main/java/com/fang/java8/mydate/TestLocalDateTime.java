@@ -4,6 +4,10 @@ import org.junit.Test;
 
 import java.time.*;
 
+/**
+ * JAVA8 时间
+ * @author
+ */
 public class TestLocalDateTime {
 
     /**
@@ -11,7 +15,14 @@ public class TestLocalDateTime {
      */
     @Test
     public void test1(){
+        // 2018-09-11
+        LocalDate ld = LocalDate.now();
+        // 16:07:31.061
+        LocalTime lt = LocalTime.now();
+        // 2018-09-11T16:07:31.061
         LocalDateTime ldt = LocalDateTime.now();
+        System.out.println(ld);
+        System.out.println(lt);
         System.out.println(ldt);
 
         //指定时间
@@ -22,8 +33,10 @@ public class TestLocalDateTime {
         LocalDateTime ldt3 = ldt.plusYears(2);
         System.out.println(ldt3);
         System.out.println(ldt.minusMonths(2));
-        ldt.getMonth().getValue();
-        ldt.getMonthValue();
+        int monthValue = ldt.getMonth().getValue();
+        int month = ldt.getMonthValue();
+        System.out.println("LocalDateTime.getMonth().getValue(): " + monthValue);
+        System.out.println("LocalDateTime.getMonthValue(): " + month);
 
     }
 
@@ -45,8 +58,12 @@ public class TestLocalDateTime {
         System.out.println(instant1.toEpochMilli());
 
         //1970-01-01T00:00:01Z
+        //Instant的构造器，获得一个Instant实例
         Instant ins2 = Instant.ofEpochSecond(1);
         System.out.println(ins2);
+
+        Instant ins3 = Instant.ofEpochMilli(instant1.toEpochMilli());
+        System.out.println(ins3.toEpochMilli());
     }
 
     /**
@@ -84,6 +101,9 @@ public class TestLocalDateTime {
         System.out.println(Duration.between(lt1, lt2).toMillis());
     }
 
+    /**
+     * Period：计算两个“日期”之间的问题
+     */
     @Test
     public void test4(){
         LocalDate ld1 = LocalDate.of(2015, 1, 1);

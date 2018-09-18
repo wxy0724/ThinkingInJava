@@ -3,10 +3,8 @@ package com.fang.java8.stream;
 import com.fang.java8.Employee;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -20,13 +18,13 @@ import java.util.stream.Stream;
 public class TestAPI {
 
     List<Employee> employees = Arrays.asList(
-            new Employee("张三", 18, 9999.99),
-            new Employee("王五", 38, 5555.55),
-            new Employee("李四", 50, 6666.66),
-            new Employee("赵六", 16, 3333.33),
-            new Employee("田七", 8, 7777.77),
-            new Employee("田七", 8, 7777.77),
-            new Employee("田七", 8, 7777.77)
+            new Employee("张三", 18, 9999.99, Employee.Status.BUSY),
+            new Employee("王五", 18, 5555.55, Employee.Status.FREE),
+            new Employee("李四", 50, 6666.66, Employee.Status.VOCATION),
+            new Employee("赵六", 16, 3333.33, Employee.Status.BUSY),
+            new Employee("田七", 16, 7777.77, Employee.Status.FREE),
+            new Employee("田七", 8, 7777.77, Employee.Status.VOCATION),
+            new Employee("田七", 8, 7777.77, Employee.Status.FREE)
     );
 
     /**
@@ -110,7 +108,8 @@ public class TestAPI {
     }
 
     /**
-     * distinct:使用 distinct必须重写hashCode()和equals()
+     * distinct: 使用distinct必须重写hashCode()和equals()
+     * 去重
      */
     @Test
     public void test6(){
@@ -122,7 +121,7 @@ public class TestAPI {
 
     /**
      * 映射
-     * map--接收Lambda，将原始转换成其他形式或提取信息。接收一个函数作为参数，该韩式会被应用到每个元素上，并将其映射成一个新的元素。
+     * map--接收Lambda，将原始转换成其他形式或提取信息。接收一个函数作为参数，该函式会被应用到每个元素上，并将其映射成一个新的元素。
      * flatMap--接收一个函数作为参数，将流中的每个值都换成另一个流，然后把所有流连接成一个流
      */
     @Test
@@ -139,7 +138,8 @@ public class TestAPI {
 
         Stream<Stream<Character>> stream = list.stream()
                                                .map(TestAPI::filterCharacter);
-        stream.forEach((sm) -> {sm.forEach(System.out::println);
+        stream.forEach((sm) -> {
+            sm.forEach(System.out::println);
         });
 
         //flatMap
@@ -182,4 +182,24 @@ public class TestAPI {
                 .forEach(System.out::println);
 
     }
+    @Test
+    public void test9(){
+        Map<Employee.Status, List<Employee>> map = employees.stream()
+                .collect(Collectors.groupingBy(Employee::getStatus));
+
+        map.forEach((k, v) -> {
+            System.out.println("key: " + k + ", value:" + v);
+        });
+
+    }
+    @Test
+    public void test10(){
+        List<Integer> list = Arrays.asList(1, 7 ,6, 4, 2, 7 ,4, 6, 4, 8, 9);
+
+        list.stream().sorted().forEach(System.out::println);
+
+    }
+
+
+
 }

@@ -155,8 +155,8 @@ public class Test {
             String sql = " SELECT DISTINCT(address), projcode FROM has_projcode_address ";
             ResultSet rs = state.executeQuery(sql);
             while (rs.next()) {
-                String newcode = rs.getString(2);
                 String address = rs.getString(1);
+                String newcode = rs.getString(2);
                 addressMap.put(address, newcode);
             }
 

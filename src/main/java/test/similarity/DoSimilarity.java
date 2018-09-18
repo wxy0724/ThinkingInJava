@@ -102,12 +102,16 @@ public class DoSimilarity {
         return f;
     }
 
+
+
     public static void main(String[] args) {
         DoSimilarity doSimilarity = new DoSimilarity();
         doSimilarity.getNoProjcodeAddress();
         doSimilarity.getSimilarity();
 
     }
+
+
 
     @org.junit.Test
     public void testFindMinPoint() {

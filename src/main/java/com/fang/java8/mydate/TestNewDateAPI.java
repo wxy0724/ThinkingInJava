@@ -10,6 +10,11 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Set;
 
+/**
+ * TemporalAdjust 时间校正器，例如：将日期调整到下个周日等操作
+ * TemporalAdjusters 该类通过静态方法提供了大量的常用TemporalAdjuster的实现
+ * @author
+ */
 public class TestNewDateAPI {
 
     @Test
@@ -56,7 +61,8 @@ public class TestNewDateAPI {
 
 
     /**
-     * TemporalAdjust
+     * TemporalAdjust 时间校正器，例如：将日期调整到下个周日等操作
+     * TemporalAdjusters 该类通过静态方法提供了大量的常用TemporalAdjuster的实现
      */
     @Test
     public void test1(){
