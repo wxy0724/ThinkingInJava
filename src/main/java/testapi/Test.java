@@ -1,13 +1,18 @@
 package testapi;
 
-import java.util.ArrayList;
-import java.util.Random;
+import com.fang.java8.colletcs.Person;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Test {
 
     public static void main(String[] args) {
-        Random random = new Random();
-
+        Random random = new Random(47);
         ArrayList<String> list = new ArrayList<>();
         list.add("A");
         list.add("B");
@@ -21,6 +26,60 @@ public class Test {
 //            new Thread(() -> System.out.println(random.nextInt(3))).start();
 //        }
 
+    }
+
+    /**
+     *  LocalDate转换成Date
+     */
+    @org.junit.Test
+    public void testDateCovertLocalDate() {
+        LocalDate ld= LocalDate.now();
+        ZoneId zoneId = ZoneId.systemDefault();
+        ZonedDateTime zdt = ld.atStartOfDay(zoneId);
+        Date date = Date.from(zdt.toInstant());
+        System.out.println("LocalDate = " + ld);
+        System.out.println("Date = " + date);
+    }
+
+    @org.junit.Test
+    public void testBigDecimalEquals() {
+        BigDecimal bd = new BigDecimal(0.3);
+        System.out.println(bd.doubleValue() == 0.3);
+        System.out.println(1.651 / 0.0);
+        System.out.println(Double.NaN);
+        System.out.println(0.0 == 0);
+        System.out.println(Double.NaN);
+    }
+
+    @org.junit.Test
+    public void testSorted() {
+        List<Person> dateList = new ArrayList<>(5);
+        Person a = new Person();
+        Person b = new Person();
+        Person c = new Person();
+        Person d = new Person();
+        Person e = new Person();
+        a.setBirthDay("2018-06");
+        b.setBirthDay("2018-09");
+        c.setBirthDay("2018-02");
+        d.setBirthDay("2018-03");
+        e.setBirthDay("2018-12");
+        dateList.add(a);
+        dateList.add(b);
+        dateList.add(c);
+        dateList.add(d);
+        dateList.add(e);
+        List<Person> list = dateList.stream().sorted(Comparator.comparing(Person::getBirthDay)).collect(Collectors.toList());
+        list.stream().forEach(System.out::println);
+    }
+
+    @org.junit.Test
+    public void testNull() {
+        Integer i = 123;
+        List<Integer> list = new ArrayList<>(10);
+        Integer b = null;
+        list.add(b);
+        System.out.println(new BigDecimal(list.get(0)));
     }
 
 }

@@ -5,6 +5,7 @@ public class Person {
     String id;
     String name;
     String age;
+    public String birthDay;
 
     public String getId() {
         return id;
@@ -26,6 +27,14 @@ public class Person {
         return age;
     }
 
+    public String getBirthDay() {
+        return birthDay;
+    }
+
+    public void setBirthDay(String birthDay) {
+        this.birthDay = birthDay;
+    }
+
     public void setAge(String age) {
         this.age = age;
     }
@@ -45,7 +54,7 @@ public class Person {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", age='" + age + '\'' +
+                ", birthDay='" + birthDay + '\'' +
                 '}';
     }
-
 }
