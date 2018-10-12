@@ -180,6 +180,8 @@ public class TestAPI {
                     }
                 })
                 .forEach(System.out::println);
+        System.out.println("--------------------------------");
+        employees.stream().sorted(Comparator.comparing(Employee::getAge)).forEach(System.out::println);
 
     }
     @Test

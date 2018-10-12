@@ -6,6 +6,8 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
+import java.util.Date;
+import java.util.Random;
 
 public class MyLocalDateTest {
 
@@ -52,5 +54,12 @@ public class MyLocalDateTest {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         String strDate = dtf.format(now);
         System.out.println(strDate);
+    }
+
+    @Test
+    public void test3() {
+        System.out.println(LocalDate.now().toString());
+        Date now = new Date();
+        System.out.println(now.toString());
     }
 }

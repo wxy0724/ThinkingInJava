@@ -82,4 +82,27 @@ public class Test {
         System.out.println(new BigDecimal(list.get(0)));
     }
 
+    @org.junit.Test
+    public void test8() {
+        int count = 0;
+        List<Integer> list = new ArrayList<>(5);
+        for (int i = 0; i < 5; i++) {
+            list.add(i);
+        }
+        System.out.println("list.size() = " + list.size());
+        for (int i = 0; i < 6; i++) {
+            if (list.size() - 1 - i >= 0) {
+                count++;
+                System.out.println(list.get(i));
+            }
+        }
+        System.out.println("count = " + count);
+    }
+
+    @org.junit.Test
+    public void test9() {
+        String str = "AAACCD";
+        System.out.println(str.matches(".*\\)"));
+    }
+
 }
