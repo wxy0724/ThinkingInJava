@@ -2,6 +2,8 @@ package com.fang.java8.mydate;
 
 import org.junit.Test;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -58,8 +60,29 @@ public class MyLocalDateTest {
 
     @Test
     public void test3() {
-        System.out.println(LocalDate.now().toString());
-        Date now = new Date();
-        System.out.println(now.toString());
+//        System.out.println(LocalDate.now().toString());
+//        Date now = new Date();
+//        System.out.println(now.toString());
+
+        DateFormat bf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = new Date();
+        System.out.println(bf.format(date));
+
     }
+
+    @Test
+    public void test4() {
+        if (getInteger() == null || getInteger() < 0) {
+            System.out.println("错误");
+        } else {
+            System.out.println("success");
+        }
+
+    }
+
+    public Integer getInteger() {
+        return 5;
+    }
+
+
 }
