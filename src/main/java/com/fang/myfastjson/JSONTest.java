@@ -40,6 +40,9 @@ public class JSONTest {
         //方式二:
         String jsonString2 = JSONObject.toJSONString(user);
         System.out.println("方式二：" + jsonString2);
+
+        String jsonString3 = JSONObject.toJSONString(user);
+        System.out.println(jsonString3);
     }
 
     /**

@@ -202,6 +202,14 @@ public class TestAPI {
 
     }
 
+    @Test
+    public void test11(){
+        List<Integer> list = Arrays.asList(1, 7 ,6, 4, 2, 7 ,4, 6, 4, 8, 9);
+        list = list.stream().filter(i -> i > 5).collect(Collectors.toList());
+        list.stream().forEach(System.out::println);
+
+    }
+
 
 
 }

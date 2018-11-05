@@ -1,10 +1,13 @@
 package com.fang.mytest;
 
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Random;
+import java.util.StringTokenizer;
 
 public class ReplaceSpace {
 
@@ -31,12 +34,28 @@ public class ReplaceSpace {
         method.invoke(obj);
     }
 
+    @Test
+    public void test3() {
+        String str = "ABCD.DCBA.EFG";
+        System.out.println(str.indexOf("."));
+        System.out.println(str.lastIndexOf("."));
+        Random r = new Random(47);
+        int i = r.nextInt(33);
+        System.out.println(i);
+    }
+
+    @Test
+    public void test4() {
+        System.out.println(StringUtils.isBlank(" "));
+        System.out.println(StringUtils.isBlank(null));
+    }
+
 }
 
 class C {
     private int i = 5;
-
     private void printI() {
         System.out.println(this.i);
     }
 }
+
