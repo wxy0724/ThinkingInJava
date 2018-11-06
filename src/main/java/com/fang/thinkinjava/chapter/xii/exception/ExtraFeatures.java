@@ -1,4 +1,4 @@
-package com.fang.thinkinjava.chapter.xiiexception;
+package com.fang.thinkinjava.chapter.xii.exception;
 
 
 public class ExtraFeatures {
