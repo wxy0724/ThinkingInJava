@@ -1,2 +1,2 @@
 # ThinkingInJavaByMaven
-https://github.com/wxy0724/ThinkingInJavaByMaven.git
+https://github.com/wxy0724/ThinkingInJava.git
