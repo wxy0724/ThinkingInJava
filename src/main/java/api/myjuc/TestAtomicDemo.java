@@ -26,7 +26,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class TestAtomicDemo {
 
     public static void main(String[] args) {
-        AtomocDemo ad = new AtomocDemo();
+        AtomicDemo ad = new AtomicDemo();
         for (int i = 0; i < 10; i++) {
             new Thread(ad).start();
         }
@@ -34,7 +34,7 @@ public class TestAtomicDemo {
 
 }
 
-class AtomocDemo implements Runnable{
+class AtomicDemo implements Runnable{
 
 //    private int serialNumber = 0;
     private AtomicInteger serialNumber = new AtomicInteger();

@@ -33,7 +33,6 @@ class Ticket implements Runnable{
         while (true){
             //上锁
             lock.lock();
-
             try{
                 if (ticket > 0){
                     try {
