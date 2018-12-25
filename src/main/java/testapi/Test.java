@@ -1,6 +1,6 @@
 package testapi;
 
-import com.fang.java8.colletcs.Person;
+import com.lovetogether.java8.colletcs.Person;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
