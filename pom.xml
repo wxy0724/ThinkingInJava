@@ -13,7 +13,9 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
+                    <!-- 源代码编译版本 -->
                     <source>1.8</source>
+                    <!-- 目标平台编译版本 -->
                     <target>1.8</target>
                 </configuration>
             </plugin>
@@ -25,12 +27,25 @@
     </properties>
 
     <dependencies>
+
+        <!-- easy-excel -->
+        <!-- https://mvnrepository.com/artifact/com.alibaba/easyexcel -->
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.3</version>
-            <!--<scope>provided</scope>-->
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.17</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.17</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>easyexcel</artifactId>
+            <version>1.1.2-beta5</version>
+        </dependency>
+
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>sqljdbc4</artifactId>
@@ -119,11 +134,11 @@
             <artifactId>lucene-suggest</artifactId>
             <version>5.2.1</version>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
             <version>3.16</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>com.fang.divideAddr</groupId>
             <artifactId>divide-address-ik-analyzer</artifactId>

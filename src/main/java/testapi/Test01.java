@@ -1,6 +1,7 @@
 package testapi;
 
 import com.lovetogether.java8.colletcs.Person;
+import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -9,7 +10,7 @@ import java.time.ZonedDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Test {
+public class Test01 {
 
     public static void main(String[] args) {
         Random random = new Random(47);
@@ -103,6 +104,12 @@ public class Test {
     public void test9() {
         String str = "AAACCD";
         System.out.println(str.matches(".*\\)"));
+    }
+
+    @Test
+    public void test10() {
+        Map<String, String> map = new HashMap<>();
+        map.put("A", "a");
     }
 
 }
