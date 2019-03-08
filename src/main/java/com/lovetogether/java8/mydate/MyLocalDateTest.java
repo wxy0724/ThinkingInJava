@@ -1,11 +1,14 @@
 package com.lovetogether.java8.mydate;
 
+import org.apache.commons.lang3.time.DateFormatUtils;
+import org.apache.commons.lang3.time.DateUtils;
 import org.junit.Test;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Date;
@@ -77,6 +80,31 @@ public class MyLocalDateTest {
         } else {
             System.out.println("success");
         }
+
+    }
+
+    @Test
+    public void test5() {
+        LocalDate localDate = LocalDate.parse("2019-03-01");
+        String format = DateTimeFormatter.ofPattern("yyyy-MM").format(localDate);
+        System.out.println(format);
+        System.out.println(localDate.toString());
+        System.out.println(localDate.getYear() + "-" + localDate.getMonthValue() + "-" + localDate.getDayOfMonth());
+    }
+
+    /**
+     * LocalDate间隔
+     */
+    @Test
+    public void test6() {
+        LocalDate localDate1 = LocalDate.parse("2019-03-01");
+        LocalDate localDate2 = LocalDate.parse("2018-03-01");
+        // 不好用，只能用来计算年月日，localDate2 - localDate1，结果不好
+//        Period between = Period.between(localDate1, localDate2);
+        System.out.println(localDate2.toEpochDay() - localDate1.toEpochDay());
+        System.out.println(localDate2.until(localDate1).getMonths());
+        LocalDate localDate = localDate2.minusMonths(5);
+        System.out.println(localDate.getYear() + "-" +localDate.getMonthValue() + "-" + localDate.getDayOfMonth());
 
     }
 

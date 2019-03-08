@@ -2,7 +2,11 @@ package com.lovetogether.java8.mydate;
 
 import org.junit.Test;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 /**
  * JAVA8 时间
@@ -116,5 +120,18 @@ public class TestLocalDateTime {
         System.out.println(period.getYears());
         System.out.println(period.getMonths());
         System.out.println(period.getDays());
+    }
+
+    @Test
+    public void test5() throws ParseException {
+        LocalDate ld1 = LocalDate.of(2015, 1, 1);
+        LocalDate ld2 = LocalDate.now();
+        LocalDate strToLd = LocalDate.parse("20150211", DateTimeFormatter.ofPattern("yyyyMMdd"));
+        System.out.println(strToLd.getYear() + "-" + strToLd.getMonthValue() + "-" + strToLd.getDayOfMonth());
+        System.out.println(ld1.until(ld2).getYears());
+        // String - Date -LocalDate
+        Date date = new SimpleDateFormat("yyyyMMdd").parse("20150211");
+        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
     }
 }

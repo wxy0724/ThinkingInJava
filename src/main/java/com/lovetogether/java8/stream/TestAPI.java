@@ -135,6 +135,14 @@ public class TestAPI {
         employees.stream()
                 .map(Employee::getName)
                 .forEach(System.out::println);
+        int age = 10;
+        employees.stream()
+                .map(e -> {
+                    Employee employee = new Employee();
+                    employee.setAge(age);
+                    return employee;
+                })
+                .forEach(System.out::println);
 
         Stream<Stream<Character>> stream = list.stream()
                                                .map(TestAPI::filterCharacter);
